@@ -5,19 +5,14 @@
 
 ## Overview
 
-The Riemann Model represents the cutting edge of analyst recommendation intelligence, leveraging ensemble learning to capitalize on analyst insights from free forums and financial websites. This model identifies optimal trading opportunities by ranking analyst recommendations and assigning confidence scores, cutting through the noise of conflicting opinions.
+The Riemann Model harnesses the power of specialized Large Language Models to implement probabilistic trading strategies based on analyst recommendation analysis. This sophisticated system evaluates analyst calls, historical accuracy rates, and market responses to identify which analysts consistently provide valuable insights for specific sectors. By ranking analyst recommendations and assigning confidence scores, the Riemann Model cuts through the noise of conflicting opinions, offering a 12% improvement in selection accuracy compared to treating all analyst opinions equally.
 
 ## Key Features
 
-- **Ensemble Learning**: Combines multiple analyst recommendations instead of relying on single analyst opinions or paid research services
-- **Performance-Based Ranking**: Ranks different analysts based on their historical accuracy rates and portfolio performances. Better performing analysts receive higher coefficients, giving them more influence in the final decision-making process
-- **Web Scraping**: Collects analyst recommendations from free forums, Benzinga, and other financial websites that report analyst calls
-- **LLM Analysis**: Uses Large Language Models to evaluate analyst calls, historical accuracy rates, and market responses
-- **Confidence Scoring**: Assigns confidence scores to recommendations, offering a 12% improvement in selection accuracy compared to treating all analyst opinions equally
-
-## System Architecture
-
-The overall system architecture will be similar to the Hyper model, with the key distinction that the Riemann Model is specifically designed for analyst recommendation analysis and probabilistic trading strategies.
+- **Analyst Rating Ranking**: Evaluates and ranks analyst recommendations using LLM analysis
+- **Web Scraping**: Collects analyst recommendations from free forums, Benzinga, and other financial websites
+- **Ensemble Learning**: Weights analysts based on historical performance and portfolio analysis
+- **Confidence Scoring**: Assigns confidence scores to recommendations
 
 ## Purpose
 
@@ -28,43 +23,3 @@ The goal of the Riemann Model is to move beyond traditional approaches:
 
 The model leverages the collective intelligence of multiple analysts, continuously evaluating and ranking their performance to optimize trading decisions based on analyst insights. Higher-ranked analysts with better historical accuracy receive higher coefficients, meaning they have more influence in the Riemann Model's final decision-making process.
 
-## Architecture
-
-```
-Riemann-Model/
-├── src/
-│   ├── scrapers/          # Web scraping modules
-│   ├── llm/              # LLM analysis and ranking
-│   ├── ensemble/         # Ensemble learning system
-│   ├── models/           # Data models and schemas
-│   └── strategies/       # Trading strategy generation
-├── data/                 # Data storage
-├── config/              # Configuration files
-├── tests/               # Test suite
-└── docs/                # Documentation
-```
-
-## Installation
-
-```bash
-pip install -r requirements.txt
-```
-
-## Usage
-
-```python
-from riemann_model import RiemannModel
-
-# Initialize the model
-model = RiemannModel()
-
-# Analyze analyst recommendations
-recommendations = model.analyze_recommendations()
-
-# Generate trading strategy
-strategy = model.generate_strategy(recommendations)
-```
-
-## License
-
-MIT License - See LICENSE file for details.
